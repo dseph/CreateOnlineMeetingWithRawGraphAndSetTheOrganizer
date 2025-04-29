@@ -1,0 +1,31 @@
+CreateOnlineMeetingWithRawGraphAndSetTheOrganizer.txt
+
+This sample is for creating an online meeting and setting the presenter
+
+POST https://graph.microsoft.com/v1.0/me/onlineMeetings
+
+{
+    "startDateTime": "2025-04-29T18:00-05:00",
+    "endDateTime": "2025-04-29T18:30-05:00",
+    "subject": "Test Meeting - Pls Delete",
+    "allowedPresenters": "everyone",
+    "participants": {
+        "organizer": {
+            "identity": {
+                "user": {
+                    "id": "df97c54f-e5g3-4326-a053-be3f2781d5943",
+                    "userPrincipalName": "admin@contoso.onmicrosoft.com"
+                }
+            }
+        },
+        "attendees": [
+        {
+            "role": "presenter",
+            "identity":{
+                "user": {
+                    "id": "37ce4a0f-5f3d-4770-899d-bfbf19d8db78"
+                }
+            }
+        }]
+    }
+}
